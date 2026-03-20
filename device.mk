@@ -38,6 +38,10 @@ PRODUCT_PACKAGES += \
 # API levels
 PRODUCT_SHIPPING_API_LEVEL := 31
 
+# Audio
+PRODUCT_PACKAGES += \
+    libaudioclient \
+
 # fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.1-impl-mock \

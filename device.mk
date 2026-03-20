@@ -3,44 +3,64 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
+
+# Project ID Quota
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # A/B
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
+# Allow userspace reboots
+$(call inherit-product, $(SRC_TARGET_DIR)/product/userspace_reboot.mk)
+
+# A/B
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.2-impl \
-    android.hardware.boot@1.2-impl.recovery \
-    android.hardware.boot@1.2-service
+    create_pl_dev \
+    create_pl_dev.recovery
 
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
     update_verifier
 
+PRODUCT_PACKAGES_DEBUG += \
+    update_engine_client
+
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=erofs \
+    FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_vendor=true \
     POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
-    FILESYSTEM_TYPE_vendor=erofs \
+    FILESYSTEM_TYPE_vendor=ext4 \
     POSTINSTALL_OPTIONAL_vendor=true
 
 PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
 
-# API levels
-PRODUCT_SHIPPING_API_LEVEL := 31
+# Audio
+TARGET_EXCLUDES_AUDIOFX := true
 
 # Audio
 PRODUCT_PACKAGES += \
     libaudioclient \
+
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.2-impl \
+    android.hardware.boot@1.2-impl.recovery \
+    android.hardware.boot@1.2-service
+
+# API levels
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -53,6 +73,14 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service
 
 # Overlays
+# PRODUCT_PACKAGES += \
+    ConnectivityResOverlay_X670 \
+    FrameworksResOverlay_X670 \
+    FrameworkResOverlayExt_X670 \
+    MtkSettingsResOverlay_X670 \
+    SettingsProviderResOverlay_X670 \
+    WifiResOverlay_X670
+
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Partitions
@@ -93,7 +121,7 @@ PRODUCT_PACKAGES += \
     init.recovery.mt6781.rc \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.emmc
+    $(LOCAL_PATH)/rootdir/etc/fstab.mt6781:$(TARGET_VENDOR_RAMDISK_OUT)/recovery/root/first_stage_ramdisk/fstab.mt6781
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

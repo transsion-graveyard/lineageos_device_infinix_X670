@@ -1375,7 +1375,8 @@ vendor/lib64/hw/libSoftGatekeeper.so;SYMLINK=vendor/lib64/hw/gatekeeper.default.
 # TEE
 vendor/bin/mcDriverDaemon
 vendor/bin/kmsetkey_ca.trustonic
-vendor/lib64/libdecrypt.sovendor/bin/hw/vendor.trustonic.tee@1.1-service
+vendor/lib64/libdecrypt.so
+vendor/bin/hw/vendor.trustonic.tee@1.1-service
 vendor/etc/init/vendor.trustonic.tee@1.1-service.rc
 vendor/lib64/vendor.trustonic.tee@1.0.so
 vendor/lib64/vendor.trustonic.tee@1.1.so
@@ -1802,7 +1803,7 @@ vendor/etc/ipsec/strongswan.conf
 
 # IMS (SYSTEM)
 system/bin/vtservice
-system/bin/init.vtservice.rc
+system/etc/init/init.vtservice.rc
 system/framework/mediatek-common.jar
 system/framework/mediatek-framework.jar
 system/framework/mediatek-ims-base.jar
@@ -1824,7 +1825,7 @@ system/lib64/libsource.so
 system/lib64/libvcodec_cap.so
 system/lib64/libvcodec_capenc.so
 system/lib64/libvt_avsync.so
-system/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
+system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
 system/priv-app/ImsService/ImsService.apk
 
 

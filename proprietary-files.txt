@@ -6,7 +6,6 @@ vendor/etc/init/atcid.rc
 vendor/lib64/vendor.mediatek.hardware.atci@1.0.so
 vendor/bin/audiocmdservice_atci
 vendor/bin/hw/android.hardware.audio.service.mediatek
-\vendor/etc/audio_policy.conf
 vendor/etc/AudioLog_dynamic.xml
 vendor/etc/init/android.hardware.audio.service.mediatek.rc
 vendor/etc/init/audiocmdservice_atci.rc

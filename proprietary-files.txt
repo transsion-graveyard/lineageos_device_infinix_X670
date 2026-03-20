@@ -2175,7 +2175,6 @@ vendor/bin/tranlogconfig
 vendor/etc/AbnormalDisplayLog_dynamic.xml
 vendor/etc/ac8MobileLegensModelLabel.txt
 vendor/etc/armnn_app.config
-vendor/etc/cgroups.json
 vendor/etc/default_pd_calibration.bin
 vendor/etc/fstb.cfg
 vendor/etc/gbe.cfg

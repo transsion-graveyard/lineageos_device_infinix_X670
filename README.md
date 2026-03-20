@@ -1,4 +1,4 @@
-# Android device tree for Infinix  (FULL-64)
+# Android device tree for Infinix Note 12 (X670)
 
 ```
 #

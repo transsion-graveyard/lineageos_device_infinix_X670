@@ -4,9 +4,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_FULL-64.mk
+    $(LOCAL_DIR)/lineage_X670.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_FULL-64-user \
-    lineage_FULL-64-userdebug \
-    lineage_FULL-64-eng
+    lineage_X670-user \
+    lineage_X670-userdebug \
+    lineage_X670-eng

@@ -27,8 +27,9 @@ from extract_utils.utils import (
 )
 
 namespace_imports = [
-    'device/lineage/example',
-]
+    'hardware/mediatek',
+    'vendor/infinix/X670'
+    ]
 
 
 def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
@@ -73,8 +74,6 @@ def blob_fixup_return_1(
 
 
 blob_fixups: blob_fixups_user_type = {
-    'vendor/app/Test.apk': blob_fixup()
-        .apktool_patch('blob-patches/TestApk.patch', '-s'),
     'vendor/etc/test.conf': blob_fixup()
         .patch_file('blob-patches/TestConf.patch')
         .regex_replace('(LOG_.*_ENABLED)=1', '\\1=0')
@@ -95,16 +94,16 @@ blob_fixups: blob_fixups_user_type = {
 }  # fmt: skip
 
 module = ExtractUtilsModule(
-    'example',
-    'lineage',
+    'X670',
+    'infinix',
     blob_fixups=blob_fixups,
     lib_fixups=lib_fixups,
     namespace_imports=namespace_imports,
 )
 
-module.add_proprietary_file('proprietary-files-phone.txt').add_copy_files_guard(
-    'TARGET_IS_TABLET', 'true', invert=True
-)
+# module.add_proprietary_file('proprietary-files-phone.txt').add_copy_files_guard(
+#    'TARGET_IS_TABLET', 'true', invert=True
+#)
 
 if __name__ == '__main__':
     utils = ExtractUtils.device(module)

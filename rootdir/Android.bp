@@ -68,13 +68,6 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.connectivity.rc",
-    src: "etc/init.connectivity.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.modem.rc",
     src: "etc/init.modem.rc",
     sub_dir: "init/hw",
@@ -167,7 +160,7 @@ prebuilt_etc {
 
 // fstab
 prebuilt_etc {
-    name: "fstab.emmc",
-    src: "etc/fstab.emmc",
+    name: "fstab.mt6781",
+    src: "etc/fstab.mt6781",
     vendor: true,
 }

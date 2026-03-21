@@ -63,14 +63,9 @@ PRODUCT_PACKAGES += \
     init.tran_mcf.sh \
 
 PRODUCT_PACKAGES += \
-    fstab.emmc \
-    factory_init.connectivity.common.rc \
-    factory_init.connectivity.rc \
-    factory_init.project.rc \
-    factory_init.rc \
-    init.aee.rc \
+    fstab.mt6781 \
     init.ago.rc \
-    init.cgroup.rc \
+    init.mt6781.power.rc \
     init.connectivity.common.rc \
     init.connectivity.rc \
     init.modem.rc \
@@ -86,6 +81,7 @@ PRODUCT_PACKAGES += \
     meta_init.rc \
     meta_init.vendor.rc \
     multi_init.rc \
+    ueventd.mt6781.rc \
     init.recovery.mt6781.rc \
 
 PRODUCT_COPY_FILES += \

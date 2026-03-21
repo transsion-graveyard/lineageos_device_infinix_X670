@@ -10,54 +10,7 @@ sh_binary {
     vendor: true,
 }
 
-sh_binary {
-    name: "init.tran_mcf.sh",
-    src: "bin/init.tran_mcf.sh",
-    vendor: true,
-}
-
 // Init configuration files
-prebuilt_etc {
-    name: "factory_init.connectivity.common.rc",
-    src: "etc/factory_init.connectivity.common.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "factory_init.connectivity.rc",
-    src: "etc/factory_init.connectivity.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "factory_init.project.rc",
-    src: "etc/factory_init.project.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "factory_init.rc",
-    src: "etc/factory_init.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "init.aee.rc",
-    src: "etc/init.aee.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "init.ago.rc",
-    src: "etc/init.ago.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
 
 prebuilt_etc {
     name: "init.cgroup.rc",
@@ -74,8 +27,8 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.connectivity.rc",
-    src: "etc/init.connectivity.rc",
+    name: "init.connectivity.mt6781.rc",
+    src: "etc/init.connectivity.mt6781.rc",
     sub_dir: "init/hw",
     vendor: true,
 }
@@ -109,10 +62,24 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.recovery.usb.rc",
+    src: "etc/init.recovery.usb.rc",
+    recovery: true,
+    relative_install_path: "init",
+}
+
+prebuilt_etc {
     name: "init.sensor_1_0.rc",
     src: "etc/init.sensor_1_0.rc",
     sub_dir: "init/hw",
     vendor: true,
+}
+
+prebuilt_etc {
+    name: "init.target.rc",
+    src: "etc/init.target.rc",
+    sub_dir: "init",
+    system_ext_specific: true,
 }
 
 prebuilt_etc {
@@ -123,57 +90,14 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "meta_init.connectivity.common.rc",
-    src: "etc/meta_init.connectivity.common.rc",
-    sub_dir: "init/hw",
+    name: "ueventd.mt6781.rc",
+    filename: "ueventd.rc",
+    src: "etc/ueventd.mt6781.rc",
     vendor: true,
 }
 
 prebuilt_etc {
-    name: "meta_init.connectivity.rc",
-    src: "etc/meta_init.connectivity.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "meta_init.modem.rc",
-    src: "etc/meta_init.modem.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "meta_init.project.rc",
-    src: "etc/meta_init.project.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "meta_init.rc",
-    src: "etc/meta_init.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "meta_init.vendor.rc",
-    src: "etc/meta_init.vendor.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "multi_init.rc",
-    src: "etc/multi_init.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-// fstab
-prebuilt_etc {
-    name: "fstab.emmc",
-    src: "etc/fstab.emmc",
+    name: "fstab.mt6781",
+    src: "etc/fstab.mt6781",
     vendor: true,
 }

@@ -14,14 +14,14 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.providers.settings.fleurp"
+    package="com.android.providers.settings.X670"
     android:versionCode="1"
     android:versionName="1.0">
     <application android:hasCode="false" />
     <overlay
       android:targetPackage="com.android.providers.settings"
       android:requiredSystemPropertyName="ro.boot.product.vendor.sku"
-      android:requiredSystemPropertyValue="fleurp"
+      android:requiredSystemPropertyValue="X670"
       android:isStatic="true"
       android:priority="0"/>
 </manifest>

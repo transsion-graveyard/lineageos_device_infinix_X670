@@ -1,6 +1,6 @@
 runtime_resource_overlay {
-    name: "FleurpSettingsProviderOverlay",
-    theme: "FleurpSettingsProviderOverlay",
+    name: "X670SettingsProviderOverlay",
+    theme: "X670SettingsProviderOverlay",
     sdk_version: "current",
     product_specific: true
 }

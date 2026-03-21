@@ -50,10 +50,6 @@ PRODUCT_PACKAGES += \
 # Audio
 TARGET_EXCLUDES_AUDIOFX := true
 
-# Audio
-PRODUCT_PACKAGES += \
-    libaudioclient \
-
 # Audio Configs
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
@@ -173,8 +169,9 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.1.vendor \
     android.hardware.neuralnetworks@1.2.vendor \
     android.hardware.neuralnetworks@1.3.vendor \
-    libruy.vendor \
     libtextclassifier_hash.vendor
+
+#    libruy.vendor \
 
 # Overlays
 # PRODUCT_PACKAGES += \
@@ -230,6 +227,13 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.hardware_keystore.km41.xml
 
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.3.vendor \
+    android.hardware.power-service.lineage-libperfmgr \
+    vendor.mediatek.hardware.mtkpower@1.2-service.stub \
+    libmtkperf_client_vendor \
+    libmtkperf_client
+
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION := false
@@ -245,8 +249,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.mt6781 \
     init.cgroup.rc \
-    init.connectivity.rc \
     init.connectivity.common.rc \
+    init.connectivity.mt6781.rc \
+    init.insmod.sh \
     init.modem.rc \
     init.mt6781.rc \
     init.mt6781.usb.rc \
@@ -254,7 +259,7 @@ PRODUCT_PACKAGES += \
     init.sensor_1_0.rc \
     init.target.rc \
     init_connectivity.rc \
-    ueventd.mt6768.rc
+    ueventd.mt6781.rc
 
 PRODUCT_PACKAGES += \
     init.recovery.usb.rc
@@ -282,7 +287,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/pixel \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/mediatek \
-    hardware/mediatek/libmtkperf_client 
+    hardware/mediatek/libmtkperf_client
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -314,7 +319,6 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi.supplicant@1.2.vendor \
     android.hardware.wifi.supplicant@1.3.vendor \
     android.hardware.wifi.supplicant@1.4.vendor \
-    hostapd \
     libwifi-hal-wrapper \
     android.hardware.wifi-service
 

@@ -28,6 +28,7 @@ from extract_utils.utils import (
 
 namespace_imports = [
     'hardware/mediatek',
+    'hardware/mediatek/libmtkperf_client',
     'vendor/infinix/X670'
     ]
 
@@ -41,9 +42,9 @@ lib_fixups: lib_fixups_user_type = {
     (
         'vendor.twopac.hardware.xoo@1.0',
         'vendor.twopac.hardware.oxo@1.0',
-        'vendor.twopac.hardware.oox@1.0',
+        'vendor.mediatek.hardware.videotelephony@1.0'
     ): lib_fixup_vendor_suffix,
-    'libwpa_client': lib_fixup_remove,
+    'libsink': lib_fixup_remove,
 }
 
 

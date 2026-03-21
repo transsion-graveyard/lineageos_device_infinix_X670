@@ -14,9 +14,9 @@
 // limitations under the License.
 
 cc_binary {
-    name: "android.hardware.light-service.fleur",
-    init_rc: ["android.hardware.light-service.fleur.rc"],
-    vintf_fragments: ["android.hardware.light-service.fleur.xml"],
+    name: "android.hardware.light-service.X670",
+    init_rc: ["android.hardware.light-service.X670.rc"],
+    vintf_fragments: ["android.hardware.light-service.X670.xml"],
     relative_install_path: "hw",
     srcs: [
         "main.cpp",

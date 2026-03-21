@@ -1,4 +1,4 @@
-service vendor.light-default /vendor/bin/hw/android.hardware.light-service.fleur
+service vendor.light-default /vendor/bin/hw/android.hardware.light-service.X670
     class hal
     user system
     group system

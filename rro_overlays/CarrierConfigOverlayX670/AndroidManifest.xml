@@ -15,7 +15,7 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.carrierconfig.fleur">
+    package="com.android.carrierconfig.X670">
     <application android:hasCode="false" />
     <overlay
       android:targetPackage="com.android.carrierconfig"

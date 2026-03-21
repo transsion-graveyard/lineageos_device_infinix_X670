@@ -96,12 +96,17 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib64/lib3a.flash.so': blob_fixup()
         .add_needed('liblog.so'),
 
+    'vendor/lib64/libcam.utils.sensorprovider.so': blob_fixup()
+        .replace_needed('libsensorndkbridge.so', 'android.hardware.sensors@1.0-convert-shared.so'),
 
+    'vendor/lib64/lib3a.sensors.flicker.so': blob_fixup()
+        .add_needed('liblog.so'),
 
+    'vendor/lib64/lib3a.sensors.color.so': blob_fixup()
+        .add_needed('liblog.so'),
 
-
-
-
+    'vendor/lib64/lib3a.ae.stat.so': blob_fixup()
+        .add_needed('liblog.so'),
 
 
 

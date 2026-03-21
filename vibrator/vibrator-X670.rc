@@ -1,4 +1,4 @@
-service vendor.vibrator-fleur /vendor/bin/hw/android.hardware.vibrator-service.fleur
+service vendor.vibrator-X670 /vendor/bin/hw/android.hardware.vibrator-service.X670
     class hal
     user system
     group system input

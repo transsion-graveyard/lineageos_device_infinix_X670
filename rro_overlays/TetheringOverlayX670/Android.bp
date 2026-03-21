@@ -15,7 +15,8 @@
 //
 
 runtime_resource_overlay {
-    name: "SystemUIOverlayFleur",
+    name: "TetheringOverlayX670",
+    certificate: "platform",
     sdk_version: "current",
     resource_dirs: ["res"],
     product_specific: true

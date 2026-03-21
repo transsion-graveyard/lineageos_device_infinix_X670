@@ -15,7 +15,7 @@
 //
 
 runtime_resource_overlay {
-    name: "SettingsOverlayFleur",
+    name: "FrameworksResOverlayX670",
     sdk_version: "current",
     resource_dirs: ["res"],
     product_specific: true

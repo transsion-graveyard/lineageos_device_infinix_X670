@@ -160,10 +160,8 @@ BOARD_AVB_VBMETA_VENDOR_ROLLBACK_INDEX_LOCATION := 4
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest.xml
 
-# TODO
-#DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/configs/vintf/framework_compatibility_matrix.xml
-
 
 # Inherit the proprietary files
 include vendor/infinix/X670/BoardConfigVendor.mk

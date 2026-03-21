@@ -203,7 +203,6 @@ PRODUCT_CHARACTERISTICS := default
 # Rootdir
 PRODUCT_PACKAGES += \
     init.insmod.sh \
-    init.tran_mcf.sh \
 
 PRODUCT_PACKAGES += \
     fstab.mt6781 \

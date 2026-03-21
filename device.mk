@@ -191,8 +191,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_performance.xml \
     $(LOCAL_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
-
-
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -230,7 +228,7 @@ PRODUCT_PACKAGES += \
     init.recovery.mt6781.rc \
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/etc/fstab.emmc:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.emmc
+    $(LOCAL_PATH)/rootdir/etc/fstab.mt6781:$(TARGET_VENDOR_RAMDISK_OUT)/first_stage_ramdisk/fstab.mt6781
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

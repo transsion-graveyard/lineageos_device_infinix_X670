@@ -28,7 +28,6 @@ from extract_utils.utils import (
 
 namespace_imports = [
     'hardware/mediatek',
-    'hardware/mediatek/libmtkperf_client',
     'vendor/infinix/X670'
     ]
 
@@ -42,9 +41,9 @@ lib_fixups: lib_fixups_user_type = {
     (
         'vendor.twopac.hardware.xoo@1.0',
         'vendor.twopac.hardware.oxo@1.0',
-        'vendor.mediatek.hardware.videotelephony@1.0'
+        'vendor.twopac.hardware.oox@1.0',
     ): lib_fixup_vendor_suffix,
-    'libsink': lib_fixup_remove,
+    'libwpa_client': lib_fixup_remove,
 }
 
 
@@ -92,25 +91,6 @@ blob_fixups: blob_fixups_user_type = {
         .binary_regex_replace(b'\xFF\x00\x00\x94', b'\xFE\x00\x00\x94')
         .sig_replace('C0 03 5F D6 ?? ?? ?? ?? C0 03 5F D6', '1F 20 03 D5')
         .call(blob_fixup_return_1, 'license_check'),
-
-    'vendor/lib64/lib3a.flash.so': blob_fixup()
-        .add_needed('liblog.so'),
-
-    'vendor/lib64/libcam.utils.sensorprovider.so': blob_fixup()
-        .replace_needed('libsensorndkbridge.so', 'android.hardware.sensors@1.0-convert-shared.so'),
-
-    'vendor/lib64/lib3a.sensors.flicker.so': blob_fixup()
-        .add_needed('liblog.so'),
-
-    'vendor/lib64/lib3a.sensors.color.so': blob_fixup()
-        .add_needed('liblog.so'),
-
-    'vendor/lib64/lib3a.ae.stat.so': blob_fixup()
-        .add_needed('liblog.so'),
-
-
-
-
 }  # fmt: skip
 
 module = ExtractUtilsModule(

@@ -199,13 +199,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_profiles_V1_0.xml
 
 # Overlays
-# PRODUCT_PACKAGES += \
-    ConnectivityResOverlay_X670 \
-    FrameworksResOverlay_X670 \
-    FrameworkResOverlayExt_X670 \
-    MtkSettingsResOverlay_X670 \
-    SettingsProviderResOverlay_X670 \
-    WifiResOverlay_X670
+PRODUCT_PACKAGES += \
+    CarrierConfigOverlayX670 \
+    FrameworksResOverlayX670 \
+    NotchBarKiller \
+    SettingsOverlayX670 \
+    SystemUIOverlayX670 \
+    TetheringOverlayX670 \
+    WifiOverlayX670 \
+    X670SettingsProviderOverlay
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
